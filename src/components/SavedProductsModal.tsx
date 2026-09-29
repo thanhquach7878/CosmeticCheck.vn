@@ -73,12 +73,13 @@ export default function SavedProductsModal({ isOpen, onClose, onSelectProduct }:
         <div className="p-6 overflow-y-auto space-y-4">
           {savedList.length === 0 ? (
             <div className="text-center py-8 text-[#8F9E8B] space-y-3">
-              <div className="w-20 h-20 mx-auto rounded-2xl overflow-hidden border border-[#2D4A3E]/15 shadow-sm bg-[#EAE6DE]">
+              <div className="w-20 h-20 mx-auto rounded-2xl overflow-hidden border border-[#2D4A3E]/15 shadow-sm bg-[#EFECE6]">
                 <img
-                  src="/src/assets/images/aloe_serum_dropper_1790602951070.jpg"
-                  alt="Lưu trữ bảng thành phần mỹ phẩm"
-                  referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover"
+                  src="https://placehold.co/400x400/2D4A3E/F7F5F0?text=CosmeticCheck+Saved"
+                  alt="Lưu trữ bảng thành phần mỹ phẩm an toàn CosmeticCheck"
+                  loading="lazy"
+                  className="w-full h-auto object-cover aspect-square"
+                  style={{ width: "100%", height: "auto", objectFit: "cover", aspectRatio: "1/1" }}
                 />
               </div>
               <p className="text-sm font-bold text-[#2D4A3E] font-heading">Bạn chưa lưu bảng thành phần nào.</p>

@@ -41,6 +41,7 @@ import RevenueCalculator from "./components/RevenueCalculator";
 import ChecklistModal from "./components/ChecklistModal";
 import ExecutiveSummaryModal from "./components/ExecutiveSummaryModal";
 import SearchBar from "./components/SearchBar";
+import InciDashboardMockup from "./components/InciDashboardMockup";
 
 import {
   SKIN_CONCERN_TAGS,
@@ -50,35 +51,34 @@ import {
   analyzeUnknownIngredient
 } from "./data/cosmeticsData";
 
-// Curated Brand-New Skincare & Lifestyle Visuals (Beauty, Personal Care & Organic Wellness)
-const UNSPLASH_HERO_BANNER = "/src/assets/images/skincare_organic_hero_1790622729909.jpg"; // Fresh minimalist organic skincare frosted glass dropper on travertine stone
-const UNSPLASH_COMMUNITY_CARE = "/src/assets/images/healing_transparency_1790624681315.jpg"; // Minh bạch và chữa lành - Serum thực vật và phục hồi màng ẩm tự nhiên
-const UNSPLASH_BOTANICAL = "/src/assets/images/skincare_botanical_pure_1790622754832.jpg"; // Pure organic golden botanical serum drop falling from glass pipette with chamomile & green tea
-const UNSPLASH_CLEAN_SKIN = "/src/assets/images/skincare_radiant_glow_1790622765601.jpg"; // Natural portrait of glowing healthy radiant dewy skin, clean beauty
-const UNSPLASH_MOTHER_BABY = "/src/assets/images/pregnancy_vegan_care_1790624694905.jpg"; // Mẹ bầu & thuần chay - Chăm sóc da an toàn thai kỳ và thuần chay 100%
-const UNSPLASH_SPA_CLINIC = "/src/assets/images/skincare_spa_retreat_1790622777202.jpg"; // Serene Japanese-inspired wellness spa treatment room with cedarwood & bonsai
-const UNSPLASH_DERM_CONSULT = "/src/assets/images/clinical_consult_1790599093696.jpg"; // Professional skin specialist consultation & personalized clinical analysis
+// Curated Brand-Standard CDN Visual Assets (Placehold.co with brand colors #2D4A3E, #D4A373, #8F9E8B, #F7F5F0)
+const UNSPLASH_HERO_BANNER = "https://placehold.co/1920x1080/2D4A3E/F7F5F0?text=CosmeticCheck+Skincare+Hero";
+const UNSPLASH_COMMUNITY_CARE = "https://placehold.co/800x600/2D4A3E/F7F5F0?text=Healing+Transparency+Skincare";
+const UNSPLASH_BOTANICAL = "https://placehold.co/800x600/2D4A3E/F7F5F0?text=Botanical+Pure+Extracts+Janssen";
+const UNSPLASH_CLEAN_SKIN = "https://placehold.co/600x400/D4A373/2D4A3E?text=Radiant+Dewy+Healthy+Skin";
+const UNSPLASH_MOTHER_BABY = "https://placehold.co/600x400/D4A373/2D4A3E?text=Pregnancy+Safe+100+Percent+Vegan";
+const UNSPLASH_SPA_CLINIC = "https://placehold.co/600x400/8F9E8B/1F2E27?text=Organic+Spa+Wellness+Retreat";
+const UNSPLASH_DERM_CONSULT = "https://placehold.co/600x400/2D4A3E/F7F5F0?text=Clinical+Dermatology+Consult";
 
-// Curated high-fidelity assets for previously imageless sections
-const IMG_SAFE_TRUST = "/src/assets/images/skincare_safe_trust_1790624728767.jpg"; // Hoạt chất lành tính, zero-toxin
-const IMG_CLINICAL_PARTNERS = "/src/assets/images/clinical_partners_1790624705959.jpg"; // Bác sĩ da liễu & đối tác y khoa
-const IMG_BUSINESS_REVENUE = "/src/assets/images/business_revenue_streams_1790624715439.jpg"; // Mô hình kinh doanh & doanh thu B2B
-const IMG_LAB_RESEARCH = "/src/assets/images/herbal_lab_research_1790601408222.jpg"; // Viện kiểm nghiệm vi sinh
-const IMG_APOTHECARY = "/src/assets/images/botanical_apothecary_1790602939128.jpg"; // Bách khoa toàn thư thành phần Janssen
-const IMG_AI_SCAN = "/src/assets/images/pitch_ai_scan_1790621367675.jpg"; // Quét phân tích AI OCR
-const IMG_COMMERCE = "/src/assets/images/ecommerce_beauty_retail_1790626379382.jpg"; // TMĐT mỹ phẩm chính hãng Shopee / Hasaki
-const IMG_ZERO_TRUST = "/src/assets/images/zerotrust_cloud_security_1790626393645.jpg"; // Hạ tầng Zero Trust an ninh dữ liệu
-const IMG_LEGAL_TECH = "/src/assets/images/legal_compliance_privacy_1790626406333.jpg"; // Pháp lý & quyền dữ liệu NĐ 13 / GDPR
-const IMG_INGREDIENT_LAB = "/src/assets/images/ingredient_lab_1790599061114.jpg"; // Khối Y khoa & AI
-const IMG_MARKETING_GROWTH = "/src/assets/images/marketing_growth_studio_1790626420974.jpg"; // Khối Tiếp thị & Tăng trưởng cộng đồng
-const IMG_FINANCE_GOVERNANCE = "/src/assets/images/finance_governance_board_1790626433809.jpg"; // Khối Tài chính & Quản trị doanh nghiệp
-const IMG_INCI_PARSER_DASHBOARD = "/src/assets/images/inci_parser_dashboard_1790626446200.jpg"; // Giao diện màn hình bóc tách INCI Parser
+// Branded CDN assets for key sections
+const IMG_SAFE_TRUST = "https://placehold.co/600x400/2D4A3E/F7F5F0?text=Zero+Toxin+Safe+Ingredients";
+const IMG_CLINICAL_PARTNERS = "https://placehold.co/600x400/2D4A3E/F7F5F0?text=Clinical+Dermatology+PubMed+Evidence";
+const IMG_BUSINESS_REVENUE = "https://placehold.co/800x450/8F9E8B/1F2E27?text=B2B+Industry+Data+Reports";
+const IMG_LAB_RESEARCH = "https://placehold.co/600x400/2D4A3E/F7F5F0?text=Herbal+Microbiology+Testing+Lab";
+const IMG_APOTHECARY = "https://placehold.co/600x400/8F9E8B/1F2E27?text=Janssen+Encyclopedia+of+Ingredients";
+const IMG_AI_SCAN = "https://placehold.co/800x450/2D4A3E/F7F5F0?text=AI+OCR+INCI+Parser+Freemium";
+const IMG_COMMERCE = "https://placehold.co/800x450/D4A373/2D4A3E?text=E-Commerce+Shopee+Mall+Hasaki+Affiliate";
+const IMG_ZERO_TRUST = "https://placehold.co/800x450/2D4A3E/F7F5F0?text=Zero+Trust+Security+Cloud+NIST";
+const IMG_LEGAL_TECH = "https://placehold.co/800x450/D4A373/2D4A3E?text=Legal+Compliance+Decree+13+GDPR";
+const IMG_INGREDIENT_LAB = "https://placehold.co/800x450/2D4A3E/F7F5F0?text=Medical+AI+Science+Pillar";
+const IMG_MARKETING_GROWTH = "https://placehold.co/800x450/D4A373/2D4A3E?text=Marketing+Growth+Community+Studio";
+const IMG_FINANCE_GOVERNANCE = "https://placehold.co/800x450/8F9E8B/1F2E27?text=Finance+Auditing+Governance+Board";
 
-// Fallback local generated assets in case network is offline
-const FALLBACK_HERO = "/src/assets/images/pitch_hero_slide_1790621350690.jpg";
-const FALLBACK_BOTANICAL = "/src/assets/images/botanical_extracts_1790601368585.jpg";
-const FALLBACK_MOTHER = "/src/assets/images/pregnancy_vegan_care_1790624694905.jpg";
-const FALLBACK_SPA = "/src/assets/images/natural_spa_clinic_1790601394265.jpg";
+// Fallback high-reliability CDN assets
+const FALLBACK_HERO = "https://placehold.co/1920x1080/2D4A3E/F7F5F0?text=CosmeticCheck+Skincare+Hero";
+const FALLBACK_BOTANICAL = "https://placehold.co/800x600/2D4A3E/F7F5F0?text=Botanical+Pure+Extracts+Janssen";
+const FALLBACK_MOTHER = "https://placehold.co/600x400/D4A373/2D4A3E?text=Pregnancy+Safe+100+Percent+Vegan";
+const FALLBACK_SPA = "https://placehold.co/600x400/8F9E8B/1F2E27?text=Organic+Spa+Wellness+Retreat";
 
 export default function App() {
   const [activeSection, setActiveSection] = useState<string>("s1");
@@ -214,7 +214,7 @@ export default function App() {
       iconColor: "text-[#2D4A3E]",
       bgBadge: "bg-[#2D4A3E]/10",
       image: UNSPLASH_CLEAN_SKIN,
-      fallbackImg: "/src/assets/images/skincare_clean_1790599075868.jpg",
+      fallbackImg: "https://placehold.co/600x400/D4A373/2D4A3E?text=Radiant+Dewy+Healthy+Skin",
       description:
         "Những người yêu thích làm đẹp tự nhiên, sở hữu làn da nhạy cảm dễ kích ứng bởi hóa chất, hương liệu nhân tạo và chất bảo quản độc hại.",
       painPoint: "Bị đánh lừa bởi quảng cáo cleanwashing; không hiểu danh pháp hóa học INCI tiếng Anh phức tạp trên nhãn chai.",
@@ -470,16 +470,17 @@ export default function App() {
           id="s1"
           className="relative min-h-[94vh] flex items-center justify-center overflow-hidden px-4 sm:px-6 py-12"
         >
-          {/* Background Image: High-res Unsplash Banner */}
-          <div className="absolute inset-0 z-0">
+          {/* Background Image: High-res Branded CDN Banner */}
+          <div className="absolute inset-0 z-0 bg-[#EFECE6]">
             <img
               src={UNSPLASH_HERO_BANNER}
               onError={(e) => {
                 (e.currentTarget as HTMLImageElement).src = FALLBACK_HERO;
               }}
-              alt="Mỹ phẩm thảo mộc và phân tích hoạt chất da liễu"
-              referrerPolicy="no-referrer"
+              alt="Mỹ phẩm thảo mộc và phân tích hoạt chất da liễu chuẩn y khoa CosmeticCheck"
+              loading="lazy"
               className="w-full h-full object-cover opacity-20 scale-105"
+              style={{ width: "100%", height: "100%", objectFit: "cover" }}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#F7F5F0] via-[#F7F5F0]/85 to-transparent" />
             <div className="absolute inset-0 bg-gradient-to-r from-[#F7F5F0] via-transparent to-[#F7F5F0]" />
@@ -745,15 +746,16 @@ export default function App() {
                 </p>
               </div>
 
-              <div className="rounded-2xl overflow-hidden border border-[#2D4A3E]/10 relative h-60 bg-[#EAE6DE]">
+              <div className="rounded-2xl overflow-hidden border border-[#2D4A3E]/10 relative bg-[#EFECE6] aspect-[16/9] w-full">
                 <img
                   src={UNSPLASH_BOTANICAL}
                   onError={(e) => {
                     (e.currentTarget as HTMLImageElement).src = FALLBACK_BOTANICAL;
                   }}
-                  alt="Chiết xuất thực vật và hoạt chất tự nhiên"
-                  referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  alt="Chiết xuất thực vật và hoạt chất tự nhiên chuẩn Janssen CosmeticCheck"
+                  loading="lazy"
+                  className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700 aspect-[16/9]"
+                  style={{ width: "100%", height: "auto", objectFit: "cover", aspectRatio: "16/9" }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#2D4A3E]/85 via-transparent to-transparent" />
                 <div className="absolute bottom-4 left-4 right-4 flex justify-between items-center text-xs text-white">
@@ -774,12 +776,13 @@ export default function App() {
             <div className="space-y-6 flex flex-col justify-between">
               {/* Card 1 */}
               <div className="bento-card p-5 group flex flex-col sm:flex-row gap-4 items-center">
-                <div className="w-full sm:w-28 h-24 rounded-xl overflow-hidden shrink-0 border border-[#2D4A3E]/10 relative bg-[#EAE6DE]">
+                <div className="w-full sm:w-28 rounded-xl overflow-hidden shrink-0 border border-[#2D4A3E]/10 relative bg-[#EFECE6] aspect-[4/3]">
                   <img
                     src={IMG_SAFE_TRUST}
-                    alt="Hoạt chất làm dịu và bảo vệ da không độc hại"
-                    referrerPolicy="no-referrer"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    alt="Hoạt chất làm dịu và bảo vệ da không độc hại chuẩn an toàn"
+                    loading="lazy"
+                    className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500 aspect-[4/3]"
+                    style={{ width: "100%", height: "auto", objectFit: "cover", aspectRatio: "4/3" }}
                   />
                   <span className="absolute bottom-1 left-1 bg-rose-700/90 text-white text-[9px] font-bold px-1.5 py-0.5 rounded backdrop-blur">
                     Zero Toxin
@@ -802,12 +805,13 @@ export default function App() {
 
               {/* Card 2 */}
               <div className="bento-card p-5 group flex flex-col sm:flex-row gap-4 items-center">
-                <div className="w-full sm:w-28 h-24 rounded-xl overflow-hidden shrink-0 border border-[#2D4A3E]/10 relative bg-[#EAE6DE]">
+                <div className="w-full sm:w-28 rounded-xl overflow-hidden shrink-0 border border-[#2D4A3E]/10 relative bg-[#EFECE6] aspect-[4/3]">
                   <img
                     src={IMG_CLINICAL_PARTNERS}
-                    alt="Đánh giá khoa học y khoa y học chứng cứ"
-                    referrerPolicy="no-referrer"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    alt="Đánh giá khoa học y khoa y học chứng cứ PubMed"
+                    loading="lazy"
+                    className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500 aspect-[4/3]"
+                    style={{ width: "100%", height: "auto", objectFit: "cover", aspectRatio: "4/3" }}
                   />
                   <span className="absolute bottom-1 left-1 bg-[#2D4A3E]/90 text-white text-[9px] font-bold px-1.5 py-0.5 rounded backdrop-blur">
                     120k+ Báo cáo
@@ -830,12 +834,13 @@ export default function App() {
 
               {/* Card 3 */}
               <div className="bento-card p-5 group flex flex-col sm:flex-row gap-4 items-center">
-                <div className="w-full sm:w-28 h-24 rounded-xl overflow-hidden shrink-0 border border-[#2D4A3E]/10 relative bg-[#EAE6DE]">
+                <div className="w-full sm:w-28 rounded-xl overflow-hidden shrink-0 border border-[#2D4A3E]/10 relative bg-[#EFECE6] aspect-[4/3]">
                   <img
                     src={UNSPLASH_CLEAN_SKIN}
-                    alt="Cá nhân hóa độc bản theo làn da"
-                    referrerPolicy="no-referrer"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    alt="Cá nhân hóa độc bản theo làn da người dùng"
+                    loading="lazy"
+                    className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500 aspect-[4/3]"
+                    style={{ width: "100%", height: "auto", objectFit: "cover", aspectRatio: "4/3" }}
                   />
                   <span className="absolute bottom-1 left-1 bg-[#D4A373]/90 text-[#2D4A3E] text-[9px] font-bold px-1.5 py-0.5 rounded backdrop-blur">
                     Độc Bản
@@ -882,12 +887,13 @@ export default function App() {
                 </span>
               </div>
             </div>
-            <div className="w-full md:w-96 h-52 rounded-2xl overflow-hidden relative border border-[#2D4A3E]/10 shrink-0 shadow-md bg-[#EAE6DE]">
+            <div className="w-full md:w-96 rounded-2xl overflow-hidden relative border border-[#2D4A3E]/10 shrink-0 shadow-md bg-[#EFECE6] aspect-[16/9]">
               <img
                 src={UNSPLASH_COMMUNITY_CARE}
-                alt="Minh bạch thành phần mỹ phẩm và chữa lành làn da"
-                referrerPolicy="no-referrer"
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                alt="Minh bạch thành phần mỹ phẩm và chữa lành làn da cộng đồng CosmeticCheck"
+                loading="lazy"
+                className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700 aspect-[16/9]"
+                style={{ width: "100%", height: "auto", objectFit: "cover", aspectRatio: "16/9" }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#2D4A3E]/85 via-transparent to-transparent flex items-end justify-between p-4">
                 <div>
@@ -907,17 +913,18 @@ export default function App() {
         {/* ============================================================ */}
         <section id="s3" className="py-24 bg-[#EFECE6]/50 border-y border-[#2D4A3E]/10">
           <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            {/* Left: Dynamic Visual Stack with Unsplash Images */}
+            {/* Left: Dynamic Visual Stack with Branded CDN Images */}
             <div className="relative h-[560px] w-full bento-card p-6 overflow-hidden flex flex-col justify-between">
-              <div className="relative w-full h-56 rounded-2xl overflow-hidden border border-[#2D4A3E]/10 shadow-sm group">
+              <div className="relative w-full rounded-2xl overflow-hidden border border-[#2D4A3E]/10 shadow-sm group bg-[#EFECE6] aspect-[16/9]">
                 <img
                   src={segments[activeSegment].image}
                   onError={(e) => {
                     (e.currentTarget as HTMLImageElement).src = segments[activeSegment].fallbackImg;
                   }}
                   alt={segments[activeSegment].title}
-                  referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                  className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500 aspect-[16/9]"
+                  style={{ width: "100%", height: "auto", objectFit: "cover", aspectRatio: "16/9" }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#2D4A3E]/80 via-transparent to-transparent" />
                 <div className="absolute bottom-3 left-4 text-xs font-bold text-white font-heading">
@@ -926,29 +933,31 @@ export default function App() {
               </div>
 
               <div className="grid grid-cols-2 gap-3 mt-4">
-                <div className="h-28 rounded-xl overflow-hidden border border-[#2D4A3E]/10 relative">
+                <div className="rounded-xl overflow-hidden border border-[#2D4A3E]/10 relative bg-[#EFECE6] aspect-[16/9]">
                   <img
                     src={UNSPLASH_MOTHER_BABY}
                     onError={(e) => {
                       (e.currentTarget as HTMLImageElement).src = FALLBACK_MOTHER;
                     }}
-                    alt="Chăm sóc da mẹ bầu an toàn"
-                    referrerPolicy="no-referrer"
-                    className="w-full h-full object-cover opacity-85 hover:opacity-100 transition-opacity"
+                    alt="Chăm sóc da mẹ bầu an toàn và thuần chay CosmeticCheck"
+                    loading="lazy"
+                    className="w-full h-auto object-cover opacity-85 hover:opacity-100 transition-opacity aspect-[16/9]"
+                    style={{ width: "100%", height: "auto", objectFit: "cover", aspectRatio: "16/9" }}
                   />
                   <span className="absolute bottom-1.5 left-2 bg-[#2D4A3E]/85 text-[10px] text-white px-2 py-0.5 rounded backdrop-blur font-heading">
                     Mẹ bầu & Thuần chay
                   </span>
                 </div>
-                <div className="h-28 rounded-xl overflow-hidden border border-[#2D4A3E]/10 relative">
+                <div className="rounded-xl overflow-hidden border border-[#2D4A3E]/10 relative bg-[#EFECE6] aspect-[16/9]">
                   <img
                     src={UNSPLASH_SPA_CLINIC}
                     onError={(e) => {
                       (e.currentTarget as HTMLImageElement).src = FALLBACK_SPA;
                     }}
-                    alt="Spa hữu cơ trị liệu da liễu"
-                    referrerPolicy="no-referrer"
-                    className="w-full h-full object-cover opacity-85 hover:opacity-100 transition-opacity"
+                    alt="Spa hữu cơ trị liệu da liễu B2B CosmeticCheck"
+                    loading="lazy"
+                    className="w-full h-auto object-cover opacity-85 hover:opacity-100 transition-opacity aspect-[16/9]"
+                    style={{ width: "100%", height: "auto", objectFit: "cover", aspectRatio: "16/9" }}
                   />
                   <span className="absolute bottom-1.5 left-2 bg-[#2D4A3E]/85 text-[10px] text-white px-2 py-0.5 rounded backdrop-blur font-heading">
                     B2B Spa & Clinic
@@ -1052,12 +1061,13 @@ export default function App() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-10">
             {/* Stream 1 */}
             <div className="bento-card overflow-hidden border-t-4 border-t-[#2D4A3E] group flex flex-col justify-between">
-              <div className="h-36 w-full overflow-hidden relative bg-[#EAE6DE]">
+              <div className="w-full overflow-hidden relative bg-[#EFECE6] aspect-[16/7]">
                 <img
                   src={IMG_AI_SCAN}
-                  alt="Freemium Subscription - Phân tích AI bóc tách hoạt chất"
-                  referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  alt="Freemium Subscription - Phân tích AI bóc tách hoạt chất CosmeticCheck"
+                  loading="lazy"
+                  className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500 aspect-[16/7]"
+                  style={{ width: "100%", height: "auto", objectFit: "cover", aspectRatio: "16/7" }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-black/20" />
                 <span className="absolute top-3 left-3 bg-[#2D4A3E] text-[#F7F5F0] text-[10px] font-bold px-2.5 py-1 rounded-lg backdrop-blur shadow-sm font-heading">
@@ -1085,12 +1095,13 @@ export default function App() {
 
             {/* Stream 2 */}
             <div className="bento-card overflow-hidden border-t-4 border-t-[#D4A373] group flex flex-col justify-between">
-              <div className="h-36 w-full overflow-hidden relative bg-[#EAE6DE]">
+              <div className="w-full overflow-hidden relative bg-[#EFECE6] aspect-[16/7]">
                 <img
                   src={IMG_COMMERCE}
-                  alt="Affiliate TMĐT mỹ phẩm an toàn chính hãng"
-                  referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  alt="Affiliate TMĐT mỹ phẩm an toàn chính hãng Shopee Mall Hasaki Guardian"
+                  loading="lazy"
+                  className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500 aspect-[16/7]"
+                  style={{ width: "100%", height: "auto", objectFit: "cover", aspectRatio: "16/7" }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-black/20" />
                 <span className="absolute top-3 left-3 bg-[#D4A373] text-[#2D4A3E] text-[10px] font-bold px-2.5 py-1 rounded-lg backdrop-blur shadow-sm font-heading">
@@ -1118,12 +1129,13 @@ export default function App() {
 
             {/* Stream 3 */}
             <div className="bento-card overflow-hidden border-t-4 border-t-[#8F9E8B] group flex flex-col justify-between">
-              <div className="h-36 w-full overflow-hidden relative bg-[#EAE6DE]">
+              <div className="w-full overflow-hidden relative bg-[#EFECE6] aspect-[16/7]">
                 <img
                   src={IMG_BUSINESS_REVENUE}
-                  alt="B2B Data and R&D Reports cho ngành mỹ phẩm"
-                  referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  alt="B2B Data and R&D Reports cho ngành mỹ phẩm và viện nghiên cứu"
+                  loading="lazy"
+                  className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500 aspect-[16/7]"
+                  style={{ width: "100%", height: "auto", objectFit: "cover", aspectRatio: "16/7" }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-black/20" />
                 <span className="absolute top-3 left-3 bg-[#8F9E8B] text-[#1F2E27] text-[10px] font-bold px-2.5 py-1 rounded-lg backdrop-blur shadow-sm font-heading">
@@ -1186,12 +1198,13 @@ export default function App() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {/* Partner 1 */}
               <div className="bento-card overflow-hidden group flex flex-col">
-                <div className="h-32 w-full overflow-hidden relative bg-[#EAE6DE]">
+                <div className="w-full overflow-hidden relative bg-[#EFECE6] aspect-[16/8]">
                   <img
                     src={IMG_CLINICAL_PARTNERS}
-                    alt="Hội Da Liễu và Bác sĩ thẩm định"
-                    referrerPolicy="no-referrer"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    alt="Hội Da Liễu và Bác sĩ thẩm định chuyên môn độc lập CosmeticCheck"
+                    loading="lazy"
+                    className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500 aspect-[16/8]"
+                    style={{ width: "100%", height: "auto", objectFit: "cover", aspectRatio: "16/8" }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent" />
                   <div className="absolute top-2.5 left-2.5 w-9 h-9 rounded-xl bg-[#2D4A3E] text-white flex items-center justify-center shadow-md">
@@ -1213,12 +1226,13 @@ export default function App() {
 
               {/* Partner 2 */}
               <div className="bento-card overflow-hidden group flex flex-col">
-                <div className="h-32 w-full overflow-hidden relative bg-[#EAE6DE]">
+                <div className="w-full overflow-hidden relative bg-[#EFECE6] aspect-[16/8]">
                   <img
                     src={IMG_COMMERCE}
                     alt="Hệ thống phân phối TMĐT chính hãng Shopee Mall Guardian Hasaki"
-                    referrerPolicy="no-referrer"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                    className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500 aspect-[16/8]"
+                    style={{ width: "100%", height: "auto", objectFit: "cover", aspectRatio: "16/8" }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent" />
                   <div className="absolute top-2.5 left-2.5 w-9 h-9 rounded-xl bg-[#D4A373] text-[#2D4A3E] flex items-center justify-center shadow-md">
@@ -1240,12 +1254,13 @@ export default function App() {
 
               {/* Partner 3 */}
               <div className="bento-card overflow-hidden group flex flex-col">
-                <div className="h-32 w-full overflow-hidden relative bg-[#EAE6DE]">
+                <div className="w-full overflow-hidden relative bg-[#EFECE6] aspect-[16/8]">
                   <img
                     src={IMG_APOTHECARY}
-                    alt="Bách khoa toàn thư hoạt chất mỹ phẩm Janssen"
-                    referrerPolicy="no-referrer"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    alt="Bách khoa toàn thư hoạt chất mỹ phẩm Janssen Cosmetics Đức"
+                    loading="lazy"
+                    className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500 aspect-[16/8]"
+                    style={{ width: "100%", height: "auto", objectFit: "cover", aspectRatio: "16/8" }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent" />
                   <div className="absolute top-2.5 left-2.5 w-9 h-9 rounded-xl bg-[#8F9E8B] text-white flex items-center justify-center shadow-md">
@@ -1267,12 +1282,13 @@ export default function App() {
 
               {/* Partner 4 */}
               <div className="bento-card overflow-hidden group flex flex-col">
-                <div className="h-32 w-full overflow-hidden relative bg-[#EAE6DE]">
+                <div className="w-full overflow-hidden relative bg-[#EFECE6] aspect-[16/8]">
                   <img
                     src={IMG_LAB_RESEARCH}
-                    alt="Viện kiểm nghiệm vi sinh và nồng độ hoạt chất"
-                    referrerPolicy="no-referrer"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    alt="Viện kiểm nghiệm vi sinh và nồng độ hoạt chất lâm sàng"
+                    loading="lazy"
+                    className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500 aspect-[16/8]"
+                    style={{ width: "100%", height: "auto", objectFit: "cover", aspectRatio: "16/8" }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent" />
                   <div className="absolute top-2.5 left-2.5 w-9 h-9 rounded-xl bg-[#2D4A3E] text-white flex items-center justify-center shadow-md">
@@ -1345,15 +1361,10 @@ export default function App() {
               </div>
             </div>
 
-            {/* Right: WCAG Visual Card with UI Dashboard */}
+            {/* Right: WCAG Visual Card with UI Dashboard Mockup (Inline SVG) */}
             <div className="order-1 lg:order-2 bento-card p-6 bg-[#FFFFFF]">
-              <div className="h-56 rounded-2xl overflow-hidden mb-5 border border-[#2D4A3E]/10">
-                <img
-                  src={IMG_INCI_PARSER_DASHBOARD}
-                  alt="Giao diện CosmeticCheck đạt chuẩn trợ năng WCAG 2.1 AA trực quan dễ đọc"
-                  referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover"
-                />
+              <div className="mb-5">
+                <InciDashboardMockup />
               </div>
 
               <div className="p-4 rounded-xl bg-[#F7F5F0] border border-[#2D4A3E]/10 space-y-3 text-xs">
@@ -1446,12 +1457,13 @@ export default function App() {
 
               {/* Zero Trust Security */}
               <div className="bento-card overflow-hidden group border-[#2D4A3E]/10 hover:border-[#2D4A3E]/30 bg-[#FFFFFF] flex flex-col justify-between">
-                <div className="h-32 w-full overflow-hidden relative bg-[#EAE6DE]">
+                <div className="w-full overflow-hidden relative bg-[#EFECE6] aspect-[16/7]">
                   <img
                     src={IMG_ZERO_TRUST}
-                    alt="Hạ tầng Zero Trust an ninh dữ liệu"
-                    referrerPolicy="no-referrer"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    alt="Hạ tầng Zero Trust an ninh dữ liệu đám mây tiêu chuẩn NIST SP 800-207"
+                    loading="lazy"
+                    className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500 aspect-[16/7]"
+                    style={{ width: "100%", height: "auto", objectFit: "cover", aspectRatio: "16/7" }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-black/20" />
                   <span className="absolute top-3 left-3 bg-[#2D4A3E] text-white text-[10px] font-bold px-2 py-0.5 rounded backdrop-blur">
@@ -1484,12 +1496,13 @@ export default function App() {
 
               {/* Legal Tech */}
               <div className="bento-card overflow-hidden bg-[#FFFFFF] flex flex-col justify-between">
-                <div className="h-32 w-full overflow-hidden relative bg-[#EAE6DE]">
+                <div className="w-full overflow-hidden relative bg-[#EFECE6] aspect-[16/7]">
                   <img
                     src={IMG_LEGAL_TECH}
-                    alt="Tuân thủ pháp lý Nghị định 13 bảo vệ dữ liệu"
-                    referrerPolicy="no-referrer"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    alt="Tuân thủ pháp lý Nghị định 13 bảo vệ dữ liệu cá nhân và chuẩn GDPR"
+                    loading="lazy"
+                    className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500 aspect-[16/7]"
+                    style={{ width: "100%", height: "auto", objectFit: "cover", aspectRatio: "16/7" }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-black/20" />
                   <span className="absolute top-3 left-3 bg-[#D4A373] text-[#2D4A3E] text-[10px] font-bold px-2 py-0.5 rounded backdrop-blur">
@@ -1554,12 +1567,13 @@ export default function App() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Science & AI Pillar */}
             <div className="bento-card overflow-hidden bg-[#FFFFFF] border-t-4 border-t-[#2D4A3E] group flex flex-col justify-between">
-              <div className="h-36 w-full overflow-hidden relative bg-[#EAE6DE]">
+              <div className="w-full overflow-hidden relative bg-[#EFECE6] aspect-[16/7]">
                 <img
                   src={IMG_INGREDIENT_LAB}
-                  alt="Khối Y Khoa và Trí tuệ Nhân tạo CosmeticCheck"
-                  referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  alt="Khối Y Khoa và Trí Tuệ Nhân Tạo CosmeticCheck"
+                  loading="lazy"
+                  className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500 aspect-[16/7]"
+                  style={{ width: "100%", height: "auto", objectFit: "cover", aspectRatio: "16/7" }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent" />
                 <span className="absolute top-3 left-3 bg-[#2D4A3E] text-white text-[10px] font-bold px-2 py-0.5 rounded backdrop-blur">
@@ -1584,12 +1598,13 @@ export default function App() {
 
             {/* Marketing Pillar */}
             <div className="bento-card overflow-hidden bg-[#FFFFFF] border-t-4 border-t-[#D4A373] group flex flex-col justify-between">
-              <div className="h-36 w-full overflow-hidden relative bg-[#EAE6DE]">
+              <div className="w-full overflow-hidden relative bg-[#EFECE6] aspect-[16/7]">
                 <img
                   src={IMG_MARKETING_GROWTH}
                   alt="Khối Tiếp Thị và Tăng Trưởng - Sáng tạo nội dung video và phát triển cộng đồng"
-                  referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                  className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500 aspect-[16/7]"
+                  style={{ width: "100%", height: "auto", objectFit: "cover", aspectRatio: "16/7" }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent" />
                 <span className="absolute top-3 left-3 bg-[#D4A373] text-[#2D4A3E] text-[10px] font-bold px-2 py-0.5 rounded backdrop-blur">
@@ -1615,12 +1630,13 @@ export default function App() {
 
             {/* Finance Pillar */}
             <div className="bento-card overflow-hidden bg-[#FFFFFF] border-t-4 border-t-[#8F9E8B] group flex flex-col justify-between">
-              <div className="h-36 w-full overflow-hidden relative bg-[#EAE6DE]">
+              <div className="w-full overflow-hidden relative bg-[#EFECE6] aspect-[16/7]">
                 <img
                   src={IMG_FINANCE_GOVERNANCE}
                   alt="Khối Tài Chính và Quản Trị Pháp Lý - Dòng tiền và báo cáo kiểm toán"
-                  referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                  className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500 aspect-[16/7]"
+                  style={{ width: "100%", height: "auto", objectFit: "cover", aspectRatio: "16/7" }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent" />
                 <span className="absolute top-3 left-3 bg-[#8F9E8B] text-[#1F2E27] text-[10px] font-bold px-2 py-0.5 rounded backdrop-blur">
@@ -1694,12 +1710,13 @@ export default function App() {
                     </div>
                   </div>
                 </div>
-                <div className="h-56 sm:h-64 rounded-2xl overflow-hidden border border-[#2D4A3E]/10 relative shadow-sm">
+                <div className="rounded-2xl overflow-hidden border border-[#2D4A3E]/10 relative shadow-sm bg-[#EFECE6] aspect-[16/9] w-full">
                   <img
                     src={UNSPLASH_COMMUNITY_CARE}
-                    alt="Minh bạch thành phần và phục hồi màng bảo vệ da"
-                    referrerPolicy="no-referrer"
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                    alt="Minh bạch thành phần và phục hồi màng bảo vệ da bền vững CosmeticCheck"
+                    loading="lazy"
+                    className="w-full h-auto object-cover hover:scale-105 transition-transform duration-700 aspect-[16/9]"
+                    style={{ width: "100%", height: "auto", objectFit: "cover", aspectRatio: "16/9" }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#2D4A3E]/75 via-transparent to-transparent flex items-end p-4">
                     <span className="text-white text-xs font-bold font-heading">

@@ -203,12 +203,13 @@ export default function ChecklistModal({ isOpen, onClose }: Props) {
         {/* List Content */}
         <div className="p-6 overflow-y-auto space-y-4">
           {/* Visual Header Banner for Technical Reliability */}
-          <div className="relative rounded-2xl overflow-hidden border border-[#2D4A3E]/10 h-36 bg-[#EAE6DE]">
+          <div className="relative rounded-2xl overflow-hidden border border-[#2D4A3E]/10 bg-[#EFECE6] aspect-[16/6] md:aspect-[16/5]">
             <img
-              src="/src/assets/images/zerotrust_cloud_security_1790626393645.jpg"
+              src="https://placehold.co/1200x400/2D4A3E/F7F5F0?text=CosmeticCheck+Infrastructure+Zero+Trust"
               alt="Hạ tầng kỹ thuật đám mây, độ tin cậy SRE và bảo mật Zero Trust"
-              referrerPolicy="no-referrer"
-              className="w-full h-full object-cover"
+              loading="lazy"
+              className="w-full h-auto object-cover aspect-[16/6] md:aspect-[16/5]"
+              style={{ width: "100%", height: "auto", objectFit: "cover" }}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#1F2E27]/90 via-[#1F2E27]/40 to-transparent flex items-end p-4 text-white justify-between">
               <div>

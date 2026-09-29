@@ -49,12 +49,13 @@ export default function ExecutiveSummaryModal({ isOpen, onClose }: Props) {
         {/* Content Body */}
         <div className="p-6 sm:p-8 overflow-y-auto space-y-6 text-sm text-[#405349] leading-relaxed font-sans bg-[#FFFFFF] m-4 rounded-2xl border border-[#2D4A3E]/10">
           {/* Visual Showcase Banner */}
-          <div className="relative rounded-2xl overflow-hidden border border-[#2D4A3E]/10 h-48 sm:h-56 bg-[#EAE6DE]">
+          <div className="relative rounded-2xl overflow-hidden border border-[#2D4A3E]/10 bg-[#EFECE6] aspect-[16/7]">
             <img
-              src="/src/assets/images/healing_transparency_1790624681315.jpg"
-              alt="Minh bạch thành phần và phục hồi chữa lành da"
-              referrerPolicy="no-referrer"
-              className="w-full h-full object-cover"
+              src="https://placehold.co/1200x525/2D4A3E/F7F5F0?text=CosmeticCheck+Executive+Summary+2026"
+              alt="Minh bạch thành phần và phục hồi chữa lành da CosmeticCheck"
+              loading="lazy"
+              className="w-full h-auto object-cover aspect-[16/7]"
+              style={{ width: "100%", height: "auto", objectFit: "cover", aspectRatio: "16/7" }}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#1F2E27]/90 via-[#1F2E27]/40 to-transparent flex flex-col justify-end p-5 text-white">
               <span className="text-[#D4A373] text-[10px] font-bold uppercase tracking-wider font-heading">
