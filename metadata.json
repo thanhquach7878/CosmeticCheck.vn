@@ -1,0 +1,8 @@
+{
+  "name": "CosmeticCheck.vn ",
+  "description": "Nền tảng chuẩn đoán, phân tích chuyên sâu bảng thành phần mỹ phẩm bằng AI, bảo vệ sức khỏe làn da dựa trên dữ liệu y khoa.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

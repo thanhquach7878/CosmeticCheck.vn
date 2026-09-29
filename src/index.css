@@ -1,0 +1,140 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-bg: #F7F5F0;
+    --color-primary: #2D4A3E;
+    --color-secondary: #8F9E8B;
+    --color-accent: #D4A373;
+    --color-surface: #FFFFFF;
+    --color-text: #1F2E27;
+  }
+
+  body {
+    background-color: #F7F5F0;
+    color: #1F2E27;
+    font-family: 'Lato', system-ui, -apple-system, sans-serif;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', system-ui, -apple-system, sans-serif;
+    letter-spacing: -0.015em;
+  }
+}
+
+/* Glassmorphism Header for Warm Ivory Theme */
+.glass-header {
+  background: rgba(247, 245, 240, 0.90);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(45, 74, 62, 0.1);
+}
+
+/* Organic Bento & Surface Cards */
+.bento-card {
+  background-color: #FFFFFF;
+  border-radius: 20px;
+  border: 1px solid rgba(45, 74, 62, 0.1);
+  box-shadow: 0 10px 30px -12px rgba(45, 74, 62, 0.07);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.bento-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 36px -12px rgba(45, 74, 62, 0.14);
+  border-color: rgba(45, 74, 62, 0.25);
+}
+
+.shadow-glow-primary {
+  box-shadow: 0 8px 24px -6px rgba(45, 74, 62, 0.25);
+}
+
+.shadow-glow-accent {
+  box-shadow: 0 8px 24px -6px rgba(212, 163, 115, 0.35);
+}
+
+.text-soft-shadow {
+  text-shadow: 0 2px 20px rgba(45, 74, 62, 0.08);
+}
+
+/* Scrollbar customization */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F7F5F0;
+}
+::-webkit-scrollbar-thumb {
+  background: #C4CFC3;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #8F9E8B;
+}
+
+/* Button Soft Hover Effect (translateY(-2px) scale(1.03) with smooth transition) */
+button, .btn-action, .btn-primary-action {
+  transition: all 0.3s ease;
+}
+
+button:hover:not(:disabled), .btn-action:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 8px 20px -4px rgba(45, 74, 62, 0.2);
+}
+
+.btn-primary-action {
+  background-color: #2D4A3E;
+  color: #F7F5F0;
+  transition: all 0.3s ease;
+}
+
+.btn-primary-action:hover {
+  background-color: #233a31;
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 10px 25px -5px rgba(45, 74, 62, 0.35);
+}
+
+button:active:not(:disabled) {
+  transform: translateY(0px) scale(0.99);
+}
+
+/* Print styles for Results & Business Plan Download */
+@media print {
+  header, footer, .no-print {
+    display: none !important;
+  }
+  body {
+    background: #ffffff !important;
+    color: #1f2937 !important;
+  }
+  div[role="dialog"] {
+    position: static !important;
+    background: transparent !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+  div[role="dialog"] > div {
+    max-height: none !important;
+    overflow: visible !important;
+    box-shadow: none !important;
+    border: 1px solid #e2e8f0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  .bento-card {
+    border: 1px solid #e5e7eb !important;
+    background: #ffffff !important;
+    box-shadow: none !important;
+  }
+  .print-area {
+    display: block !important;
+  }
+}
+
+
